@@ -1,1 +1,1 @@
-web: gunicorn belly_button.app:app
+web: gunicorn --chdir belly_button app:app

@@ -1,1 +1,1 @@
-web: gunicorn --chdir belly_button app.py
+web: gunicorn belly_button.app:app

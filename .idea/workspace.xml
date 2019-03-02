@@ -14,7 +14,7 @@
         <entry file="file://$PROJECT_DIR$/Procfile">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="41" lean-forward="true" selection-start-column="41" selection-end-column="41" />
+              <caret column="34" lean-forward="true" selection-start-column="34" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -64,9 +64,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-126" />
-    <option name="y" value="780" />
-    <option name="width" value="3030" />
+    <option name="x" value="-10" />
+    <option name="y" value="16" />
+    <option name="width" value="3018" />
     <option name="height" value="1936" />
   </component>
   <component name="ProjectView">
@@ -139,19 +139,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551510774621</updated>
-      <workItem from="1551510776080" duration="2541000" />
+      <workItem from="1551510776080" duration="3100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2541000" />
+    <option name="totallyTimeSpent" value="3100000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-63" y="390" width="1515" height="968" extended-state="0" />
-    <editor active="true" />
+    <frame x="-5" y="8" width="1509" height="968" extended-state="0" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24982841" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25086147" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -216,7 +215,7 @@
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="41" lean-forward="true" selection-start-column="41" selection-end-column="41" />
+          <caret column="34" lean-forward="true" selection-start-column="34" selection-end-column="34" />
         </state>
       </provider>
     </entry>

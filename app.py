@@ -24,47 +24,47 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', '') or "s
 db = SQLAlchemy(app)
 engine = create_engine(os.environ.get('DATABASE_URL','') or "sqlite:///db/bellybutton.sqlite")
 
-# class Otu(db.Model):
-#     __tablename__ = "otu"
+class Otu(db.Model):
+    __tablename__ = "otu"
 
-#     otu_id = db.Column(db.Integer, primary_key=True)
-#     lowest_taxonomic_unit_found = db.Column(db.String)
+    otu_id = db.Column(db.Integer, primary_key=True)
+    lowest_taxonomic_unit_found = db.Column(db.String)
 
-# class Metadata(db.Model):
-#     __tablename__ = "samples_metadata"
+class Metadata(db.Model):
+    __tablename__ = "samples_metadata"
 
-#     sample = db.Column(db.Integer, primary_key=True)
-#     EVENT = db.Column(db.String)
-#     ETHNICITY = db.Column(db.String)
-#     GENDER = db.Column(db.String)
-#     AGE = db.Column(db.Integer)
-#     WFREQ = db.Column(db.Float)
-#     BBTYPE = db.Column(db.String)
-#     LOCATION = db.Column(db.String)
-#     COUNTRY012 = db.Column(db.String)
-#     ZIP012 = db.Column(db.Integer)
-#     COUNTRY1319 = db.Column(db.String)
-#     ZIP1319 = db.Column(db.Integer)
-#     DOG = db.Column(db.String)
-#     CAT = db.Column(db.String)
-#     IMPSURFACE013 = db.Column(db.Integer)
-#     NPP013 = db.Column(db.Float)
-#     MMAXTEMP013 = db.Column(db.Float)
-#     PFC013 = db.Column(db.Float)
-#     IMPSURFACE1319 = db.Column(db.Integer)
-#     NPP1319 = db.Column(db.Float)
-#     MMAXTEMP1319 = db.Column(db.Float)
-#     PFC1319 = db.Column(db.Float)
+    sample = db.Column(db.Integer, primary_key=True)
+    EVENT = db.Column(db.String)
+    ETHNICITY = db.Column(db.String)
+    GENDER = db.Column(db.String)
+    AGE = db.Column(db.Integer)
+    WFREQ = db.Column(db.Float)
+    BBTYPE = db.Column(db.String)
+    LOCATION = db.Column(db.String)
+    COUNTRY012 = db.Column(db.String)
+    ZIP012 = db.Column(db.String)
+    COUNTRY1319 = db.Column(db.String)
+    ZIP1319 = db.Column(db.String)
+    DOG = db.Column(db.String)
+    CAT = db.Column(db.String)
+    IMPSURFACE013 = db.Column(db.Integer)
+    NPP013 = db.Column(db.Float)
+    MMAXTEMP013 = db.Column(db.Float)
+    PFC013 = db.Column(db.Float)
+    IMPSURFACE1319 = db.Column(db.Integer)
+    NPP1319 = db.Column(db.Float)
+    MMAXTEMP1319 = db.Column(db.Float)
+    PFC1319 = db.Column(db.Float)
 
 
 # reflect an existing database into a new model
-# Base = automap_base()
-# reflect the tables
-# Base.prepare(db.engine, reflect=True)
+Base = automap_base()
+reflect the tables
+Base.prepare(db.engine, reflect=True)
 
 # Save references to each table
-Samples_Metadata = Base.classes.samples_metadata
-Samples = Base.classes.otu
+Samples_Metadata = Base.classes.sample_metadata
+Samples = Base.classes.samples
 
 
 @app.route("/")

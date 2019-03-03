@@ -1,7 +1,7 @@
 function buildMetadata(sample) {
   console.log("got here - metadata")
  
-  // @TODO: Complete the following function that builds the metadata panel
+  // Metadata panel
   var metaDataUrl = `/metadata/${sample}`;
 
   // Use `d3.json` to fetch the metadata for a sample
@@ -28,9 +28,8 @@ function buildMetadata(sample) {
 
 function buildCharts(sample) {
   console.log("got here - build charts")
-  // @TODO: Use `d3.json` to fetch the sample data for the plots
+  // Use `d3.json` to fetch the sample data for the plots
   var url = `/samples/${sample}`;
- 
  
   d3.json(url).then(function(response) {
     // @TODO: Build a Bubble Chart using the sample data
@@ -53,7 +52,7 @@ function buildCharts(sample) {
 
     Plotly.newPlot("bubble", bubbleData); 
     
-    // @TODO: Build a Pie Chart
+    // Build a Pie Chart
     var labels = response.otu_ids.slice(0,9);
     var values = response.sample_values.slice(0,9);
     var hoverText = response.otu_labels.slice(0,9);

@@ -1,5 +1,4 @@
 function buildMetadata(sample) {
-  console.log("got here - metadata")
  
   // Metadata panel
   var metaDataUrl = `/metadata/${sample}`;
@@ -27,7 +26,6 @@ function buildMetadata(sample) {
 }
 
 function buildCharts(sample) {
-  console.log("got here - build charts")
   // Use `d3.json` to fetch the sample data for the plots
   var url = `/samples/${sample}`;
  
@@ -109,7 +107,6 @@ function init() {
 
 function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
-  console.log("got here - option changed")
   buildCharts(newSample);
   buildMetadata(newSample);
 }

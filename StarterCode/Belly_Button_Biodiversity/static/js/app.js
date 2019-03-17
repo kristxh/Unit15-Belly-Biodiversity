@@ -1,31 +1,31 @@
 function buildMetadata(sample) {
- 
-  // Metadata panel
-  var metaDataUrl = `/metadata/${sample}`;
 
-  // Use `d3.json` to fetch the metadata for a sample
-  d3.json(metaDataUrl).then(function(response) {
-    console.log(response);   
+     // Metadata panel   
+    var metaDataUrl = `/metadata/${sample}`;
 
-    // Use d3 to select the panel with id of `#sample-metadata`
-    var selection = d3.select("#sample-metadata")
-
-    // Use `.html("") to clear any existing metadata
-    selection.html("");
-
-    // Use `Object.entries` to add each key and value pair to the panel
-    Object.entries(response).forEach(([key, value]) => {
-      selection.append("p").text(`${key}: ${value}`);
-      console.log(`${key}: ${value}`);
+    // Use `d3.json` to fetch the metadata for a sample
+    d3.json(metaDataUrl).then(function(response) {
+      console.log(response);   
+  
+      // Use d3 to select the panel with id of `#sample-metadata`
+      var selection = d3.select("#sample-metadata")
+  
+      // Use `.html("") to clear any existing metadata
+      selection.html("");
+  
+      // Use `Object.entries` to add each key and value pair to the panel
+      Object.entries(response).forEach(([key, value]) => {
+        selection.append("p").text(`${key}: ${value}`);
+      });
+      // });
+      // BONUS: Build the Gauge Chart
+      // buildGauge(data.WFREQ);
+      // Plotly.newPlot('gauge', data);
     });
-    // });
-    // BONUS: Build the Gauge Chart
-    // buildGauge(data.WFREQ);
-    // Plotly.newPlot('gauge', data);
-  });
 }
 
 function buildCharts(sample) {
+
   // Use `d3.json` to fetch the sample data for the plots
   var url = `/samples/${sample}`;
  
@@ -33,9 +33,6 @@ function buildCharts(sample) {
     // @TODO: Build a Bubble Chart using the sample data
     var xValues = response.otu_ids;
     var yValues = response.sample_values;
-    console.log("building the bubble")
-    console.log(xValues);
-    console.log(yValues);
     var bubbleData = [ 
       {
         x: xValues,
@@ -54,9 +51,6 @@ function buildCharts(sample) {
     var labels = response.otu_ids.slice(0,9);
     var values = response.sample_values.slice(0,9);
     var hoverText = response.otu_labels.slice(0,9);
-    console.log("building the pie")
-    console.log(labels)
-    console.log(values)
     var trace = {
       "labels": labels,
       "values": values,
@@ -82,7 +76,6 @@ function buildCharts(sample) {
     Plotly.newPlot("pie", pieData, layout); 
 
   });
-
 }
 
 function init() {
